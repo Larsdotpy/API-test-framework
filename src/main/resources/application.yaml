@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_vendor?useSSL=false
+    username: root
+    password: rootuserpassword
+
+#JPA Settings
+  jpa.hibernate.ddl_auto: create
