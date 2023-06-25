@@ -56,7 +56,11 @@ create, read, update and delete methods hier uitleggen (eventueel swagger link)
 
 ### Amount of testcases
 Create testcases: 0
+
 Read   testcases: 0
+
 Update testcases: 0
+
 Delete testcases: 0
+
 Total  testcases: 0
