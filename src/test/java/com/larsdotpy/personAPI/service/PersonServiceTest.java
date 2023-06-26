@@ -28,7 +28,7 @@ class PersonServiceTest {
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
         personService = new PersonServiceImpl(personRepository);
-        person = new Person("1", "John",
+        person = new Person("1", "John", "Jones", 180, 85.0,
                 "USA", "123456");
     }
 

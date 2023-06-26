@@ -20,7 +20,7 @@ public class PersonRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person("1", "John",
+        person = new Person("1", "John", "Jones", 180, 85.0,
                 "USA", "123456");
         personRepository.save(person);
     }

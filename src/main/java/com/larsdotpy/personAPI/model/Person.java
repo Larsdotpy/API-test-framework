@@ -7,11 +7,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="person_info")
 public class Person {
-    public Person(String personId, String firstName, String Address, String PhoneNumber) {
+    public Person(String personId, String firstName, String lastName, int heightInCm, double weightInKg, String address, String phoneNumber) {
         this.personId = personId;
         this.firstName = firstName;
-        this.Address = Address;
-        this.PhoneNumber = PhoneNumber;
+        this.lastName = lastName;
+        this.heightInCm = heightInCm;
+        this.weightInKg = weightInKg;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     public Person() {
@@ -34,24 +37,50 @@ public class Person {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        this.Address = address;
+        this.address = address;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getHeightInCm() {
+        return heightInCm;
+    }
+
+    public void setHeightInCm(int heightInCm) {
+        this.heightInCm = heightInCm;
+    }
+
+    public double getWeightInKg() {
+        return weightInKg;
+    }
+
+    public void setWeightInKg(double weightInKg) {
+        this.weightInKg = weightInKg;
+    }
     @Id
     private String personId;
     private String firstName;
-    private String Address;
-    private String PhoneNumber;
+    private String lastName;
+    private int heightInCm;
+    private double weightInKg;
+    private String address;
+    private String phoneNumber;
 }
