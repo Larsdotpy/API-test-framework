@@ -20,8 +20,9 @@ public class PersonRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person("1", "John", "Jones", 180, 85.0,
-                "USA", "123456");
+        person = new Person("1", "John", "Jones",
+                45, 180, 85.0,
+                "USA", false);
         personRepository.save(person);
     }
 
@@ -37,8 +38,8 @@ public class PersonRepositoryTest {
     void testFindByFirstName_Found(){
         List<Person> personList = personRepository.findByFirstName("John");
         assertThat(personList.get(0).getPersonId()).isEqualTo(person.getPersonId());
-        assertThat(personList.get(0).getAddress())
-                .isEqualTo(person.getAddress());
+        assertThat(personList.get(0).getCountry())
+                .isEqualTo(person.getCountry());
     }
 
 

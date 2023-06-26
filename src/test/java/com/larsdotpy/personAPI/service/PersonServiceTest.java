@@ -10,9 +10,7 @@ import org.mockito.Answers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
 import java.util.*;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
 
@@ -28,8 +26,9 @@ class PersonServiceTest {
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
         personService = new PersonServiceImpl(personRepository);
-        person = new Person("1", "John", "Jones", 180, 85.0,
-                "USA", "123456");
+        person = new Person("1", "John", "Jones",
+                45, 180, 85.0,
+                "USA", false);
     }
 
     @AfterEach
@@ -87,7 +86,7 @@ class PersonServiceTest {
 
         when(personRepository.findAll()).thenReturn(new ArrayList<Person>(Collections.singleton(person)));
 
-        assertThat(personService.getAllPeople().get(0).getPhoneNumber())
-                .isEqualTo(person.getPhoneNumber());
+        assertThat(personService.getAllPeople().get(0).getMarried())
+                .isEqualTo(person.getMarried());
     }
 }

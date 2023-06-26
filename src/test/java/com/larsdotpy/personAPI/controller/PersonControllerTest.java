@@ -36,12 +36,12 @@ class PersonControllerTest {
     @BeforeEach
     void setUp() {
         personOne = new Person("1", "John", "Jones",
-                180, 85.0,
-                "USA", "123456");
+                45, 180, 85.0,
+                "USA", false);
 
         personTwo = new Person("2", "Jack", "Debrois",
-                195, 110.0,
-                "UK", "654321");
+                33, 195, 110.0,
+                "UK", true);
         personList.add(personOne);
         personList.add(personTwo);
     }
