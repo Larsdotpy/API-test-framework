@@ -3,8 +3,8 @@ package com.larsdotpy.personAPI.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.larsdotpy.personAPI.model.CloudVendor;
-import com.larsdotpy.personAPI.service.CloudVendorService;
+import com.larsdotpy.personAPI.model.Person;
+import com.larsdotpy.personAPI.service.PersonService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,25 +22,25 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(CloudVendorController.class)
-class CloudVendorControllerTest {
+@WebMvcTest(PersonController.class)
+class PersonControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
     @MockBean
-    private CloudVendorService cloudVendorService;
-    CloudVendor cloudVendorOne;
-    CloudVendor cloudVendorTwo;
-    List<CloudVendor> cloudVendorList = new ArrayList<>();
+    private PersonService personService;
+    Person personOne;
+    Person personTwo;
+    List<Person> personList = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
-        cloudVendorOne = new CloudVendor("1", "Amazon",
+        personOne = new Person("1", "John",
                 "USA", "123456");
-        cloudVendorTwo = new CloudVendor("2", "Google",
+        personTwo = new Person("2", "Jack",
                 "UK", "654321");
-        cloudVendorList.add(cloudVendorOne);
-        cloudVendorList.add(cloudVendorTwo);
+        personList.add(personOne);
+        personList.add(personTwo);
     }
 
     @AfterEach
@@ -48,31 +48,31 @@ class CloudVendorControllerTest {
     }
 
     @Test
-    void testGetCloudVendorDetails() throws Exception {
-        when(cloudVendorService.getCloudVendor("1"))
-                .thenReturn(cloudVendorOne);
-        this.mockMvc.perform(get("/cloudvendor/1"))
+    void testGetPersonDetails() throws Exception {
+        when(personService.getPerson("1"))
+                .thenReturn(personOne);
+        this.mockMvc.perform(get("/person-api/1"))
                 .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void testGetAllCloudVendorDetails() throws Exception {
-        when(cloudVendorService.getAllCloudVendors())
-                .thenReturn(cloudVendorList);
-        this.mockMvc.perform(get("/cloudvendor"))
+    void testGetAllPeopleDetails() throws Exception {
+        when(personService.getAllPeople())
+                .thenReturn(personList);
+        this.mockMvc.perform(get("/person-api"))
                 .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void testCreateCloudVendorDetails() throws Exception {
+    void testCreatePersonDetails() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson = ow.writeValueAsString(cloudVendorOne);
+        String requestJson = ow.writeValueAsString(personOne);
 
-        when(cloudVendorService.createCloudVendor(cloudVendorOne))
+        when(personService.createPerson(personOne))
                 .thenReturn("Successfully created");
-        this.mockMvc.perform(post("/cloudvendor")
+        this.mockMvc.perform(post("/person-api")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestJson))
                 .andDo(print()).andExpect(status().isOk());
@@ -80,25 +80,25 @@ class CloudVendorControllerTest {
     }
 
     @Test
-    void testUpdateCloudVendorDetails() throws Exception {
+    void testUpdatePersonDetails() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson = ow.writeValueAsString(cloudVendorOne);
+        String requestJson = ow.writeValueAsString(personOne);
 
-        when(cloudVendorService.updateCloudVendor(cloudVendorOne))
+        when(personService.updatePerson(personOne))
                 .thenReturn("Successfully updated");
-        this.mockMvc.perform(put("/cloudvendor")
+        this.mockMvc.perform(put("/person-api")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestJson))
                 .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
-    void testDeleteCloudVendorDetails() throws Exception {
-        when(cloudVendorService.deleteCloudVendor("1"))
+    void testDeletePersonDetails() throws Exception {
+        when(personService.deletePerson("1"))
                 .thenReturn("Successfully deleted");
-        this.mockMvc.perform(delete("/cloudvendor/1"))
+        this.mockMvc.perform(delete("/person-api/1"))
                 .andDo(print()).andExpect(status().isOk());
     }
 }
