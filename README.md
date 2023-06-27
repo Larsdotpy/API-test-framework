@@ -124,21 +124,37 @@ create, read, update and delete methods hier uitleggen (eventueel swagger link)
 
 In order to really tackle the challenge of API testing I decided to test this API in three different ways. Unit tests, Java automation tests and Postman tests.
 
-### Amount of unit testcases
-Create testcases: 0
+### Amount of testcases
+Unit testcases: **12**
 
-Read   testcases: 0
+Postman testcases: **11**
 
-Update testcases: 0
+Java Rest assured testcases: **0**
 
-Delete testcases: 0
-
-Total  testcases: 0
+Total testcas: **23**
 
 ### Postman
 The Postman tool can be used for both manual and automated tests for the API framework. It can be used to check if data is created, read, updated or deleted in a valid way and if it does not result in any errors. Below I presented a link to my Postman project which contains automated tests for this API framework. This is additional to the unit testing in Java and the seperate API testing framework in Java.
 
------> Link naar POSTMAN project <--------
+The Postman tests are added to the API project as a JSON file. You can open Postman and then open a project. Navigate to the folder where you saved the JSON file. It is recommended to save the JSON file from the API project seperately after cloning the repository, so that you can open it in Postman without any errors.
+
+To open a Postman project that is saved in a JSON file, you can follow these steps:
+
+1. Launch the Postman application on your computer. If you don't have it installed, you can download and install it from the Postman website (https://www.postman.com/downloads/).
+
+2. Once Postman is open, click on the "Import" button located at the top left corner of the application's window.
+
+3. In the import window that appears, select the "Import File" tab.
+
+4. Click on the "Choose Files" button and navigate to the location where your JSON file is saved. Select the JSON file and click on "Open" to import it.
+
+5. Postman will automatically recognize the JSON file format and import it as a collection. You should see a preview of the collection's details in the import window.
+
+6. Review the settings and options in the import window. You can choose to import the collection into an existing workspace or create a new workspace. You can also customize the collection name and other import settings if needed.
+
+7. Once you've reviewed the import settings, click on the "Import" button to import the JSON file as a Postman collection.
+
+8. After the import process is complete, you will see the imported collection listed in the left sidebar of the Postman application. Click on the collection to expand it and view the saved requests, folders, and other elements within the project.
 
 ### Java automation
 xxxxx
