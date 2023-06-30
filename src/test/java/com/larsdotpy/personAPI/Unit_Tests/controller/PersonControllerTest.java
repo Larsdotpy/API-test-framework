@@ -1,8 +1,9 @@
-package com.larsdotpy.personAPI.controller;
+package com.larsdotpy.personAPI.Unit_Tests.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.larsdotpy.personAPI.controller.PersonController;
 import com.larsdotpy.personAPI.model.Person;
 import com.larsdotpy.personAPI.service.PersonService;
 import org.junit.jupiter.api.AfterEach;

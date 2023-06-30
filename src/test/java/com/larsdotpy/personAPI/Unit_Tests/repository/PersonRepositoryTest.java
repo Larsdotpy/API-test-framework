@@ -1,6 +1,7 @@
-package com.larsdotpy.personAPI.repository;
+package com.larsdotpy.personAPI.Unit_Tests.repository;
 
 import com.larsdotpy.personAPI.model.Person;
+import com.larsdotpy.personAPI.repository.PersonRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,8 @@
-package com.larsdotpy.personAPI.service;
+package com.larsdotpy.personAPI.Unit_Tests.service;
 
 import com.larsdotpy.personAPI.model.Person;
 import com.larsdotpy.personAPI.repository.PersonRepository;
+import com.larsdotpy.personAPI.service.PersonService;
 import com.larsdotpy.personAPI.service.impl.PersonServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
