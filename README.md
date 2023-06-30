@@ -136,7 +136,7 @@ Total testcas: **23**
 ### Postman
 The Postman tool can be used for both manual and automated tests for the API framework. It can be used to check if data is created, read, updated or deleted in a valid way and if it does not result in any errors. Below I presented a link to my Postman project which contains automated tests for this API framework. This is additional to the unit testing in Java and the seperate API testing framework in Java.
 
-The Postman tests are added to the API project as a JSON file. You can open Postman and then open a project. Navigate to the folder where you saved the JSON file. It is recommended to save the JSON file from the API project seperately after cloning the repository, so that you can open it in Postman without any errors.
+The Postman tests are added to the API project as a JSON file. You can find the file at the following location inside the project structure: `src/test/resources/PostmanFramework.json`. 
 
 To open a Postman project that is saved in a JSON file, you can follow these steps:
 
