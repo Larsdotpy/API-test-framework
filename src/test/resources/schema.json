@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "properties": {
+    "personId": { "type": "string" },
+    "firstName": { "type": "string" },
+    "lastName": { "type": "string" },
+    "age": { "type": "number" },
+    "heightInCm": { "type": "number" },
+    "weightInKg": { "type": "number" },
+    "country": { "type": "string" },
+    "married": { "type": "boolean" }
+  },
+  "required": ["personId", "firstName", "lastName", "age", "heightInCm", "weightInKg", "country", "married"]
+}
