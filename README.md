@@ -7,7 +7,7 @@
 
 **Languages**: Java
 
-**Automator**: Junit, AssertJ, Mockito, Postman, TestNG
+**Automator**: Junit, AssertJ, Mockito, Postman, TestNG, RestAssured
 
 ## Project setup
 
@@ -157,4 +157,4 @@ To open a Postman project that is saved in a JSON file, you can follow these ste
 8. After the import process is complete, you will see the imported collection listed in the left sidebar of the Postman application. Click on the collection to expand it and view the saved requests, folders, and other elements within the project.
 
 ### Java automation
-xxxxx
+To further enrich the API testing capabilities, I included additional tests written in Java using the RestAssured library. These tests can be run from the same project and did not require an additional external project. Before running the tests, the API must be up and running according to the previously mentioned method. When the API is successfully running, then the tests can be executed without any errors. 
