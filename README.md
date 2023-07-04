@@ -125,10 +125,11 @@ spring:
     url: jdbc:mysql://localhost:3306/***YOUR DATABASE NAME***?useSSL=false
     username: ***YOUR DATABASE USERNAME***
     password: ***YOUR DATABASE PASSWORD***
-```
 
 #JPA Settings
   jpa.hibernate.ddl_auto: create
+
+```
 
 ## API Documentation
 create, read, update and delete methods hier uitleggen (eventueel swagger link)
