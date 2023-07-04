@@ -7,7 +7,7 @@
 
 **Languages**: Java
 
-**Automator**: Junit, AssertJ, Mockito, Postman, TestNG, RestAssured
+**Automator & Libraries**: Junit, AssertJ, Mockito, Postman, TestNG, RestAssured
 
 ## Project setup
 
