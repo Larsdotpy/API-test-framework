@@ -1,7 +1,6 @@
 package com.larsdotpy.personAPI.service;
 
 import com.larsdotpy.personAPI.model.Person;
-
 import java.util.List;
 
 public interface PersonService {

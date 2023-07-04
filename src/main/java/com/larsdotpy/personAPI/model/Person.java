@@ -3,9 +3,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.lang.reflect.Array;
-import java.util.List;
-
 
 @Entity
 @Table(name="person_info")
@@ -21,7 +18,6 @@ public class Person {
         this.country = country;
         this.married = married;
     }
-    //languages toevoegen en dit kunnen er meer dan 1 zijn
 
     public Person() {
     }

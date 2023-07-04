@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <test name="POST">
+        <classes>
+            <class name="com.larsdotpy.personAPI.Java_API_Tests.POST"/>
+        </classes>
+    </test>
+    <test name="PUT">
+        <classes>
+            <class name="com.larsdotpy.personAPI.Java_API_Tests.PUT"/>
+        </classes>
+    </test>
+    <test name="GET">
+        <classes>
+            <class name="com.larsdotpy.personAPI.Java_API_Tests.GET"/>
+        </classes>
+    </test>
+    <test name="DELETE">
+        <classes>
+            <class name="com.larsdotpy.personAPI.Java_API_Tests.DELETE"/>
+        </classes>
+    </test>
+</suite>

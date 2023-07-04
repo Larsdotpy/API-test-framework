@@ -1,9 +1,10 @@
 package com.larsdotpy.personAPI.Java_API_Tests;
 
+import com.larsdotpy.personAPI.model.Person;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
 import java.util.Random;
 
 import static io.restassured.RestAssured.given;
@@ -72,49 +73,33 @@ public class POST {
         return RANDOM.nextBoolean();
     }
 
-    //FIXME
-    // De MySQLWorkbench ziet heightInCm en weightInKg altijd als 0
-    // De java terminal ziet echter wel de correcte waardes
-    // Ergens gaat het hier nog mis, maar waar? No ideaaaa
     @Test
-    public void successfullyCreateNewPersonAndReturnStatuscode200(){
-        for (int i = 1; i <= 50; i++) {
-            String personId = String.valueOf(i);
-            String firstName = generateRandomFirstName();
-            String lastName = generateRandomLastName();
-            int age = generateRandomAge();
-            int heightInCm = generateRandomHeight();
-            double weightInKg = generateRandomWeight();
-            String country = generateRandomCountry();
-            boolean married = generateRandomMarriedStatus();
+    public void successfullyCreateNewPersonAndReturnStatuscode200() {
+            for (int i = 1; i <= 50; i++) {
+                String personId = String.valueOf(i);
+                String firstName = generateRandomFirstName();
+                String lastName = generateRandomLastName();
+                int age = generateRandomAge();
+                int heightInCm = generateRandomHeight();
+                double weightInKg = generateRandomWeight();
+                String country = generateRandomCountry();
+                boolean married = generateRandomMarriedStatus();
 
-            System.out.println("Person " + personId + ":");
-            System.out.println("First Name: " + firstName);
-            System.out.println("Last Name: " + lastName);
-            System.out.println("Age: " + age);
-            System.out.println("Height (cm): " + heightInCm);
-            System.out.println("Weight (kg): " + weightInKg);
-            System.out.println("Country: " + country);
-            System.out.println("Married: " + married);
+                Person person = new Person(Integer.toString(i), firstName, lastName, age, heightInCm, weightInKg,
+                        country, married);
 
-            String jsonPayload = "{\"personId\": \"" + personId + "\", " +
-                    "\"firstName\": \"" + firstName + "\", " +
-                    "\"lastName\": \"" + lastName + "\", " +
-                    "\"age\": " + age + ", " +
-                    "\"height\": " + heightInCm + ", " +
-                    "\"weight\": " + weightInKg + ", " +
-                    "\"country\": \"" + country + "\", " +
-                    "\"married\": " + married + " }";
+                // Send the POST request and validate the response
+                given()
+                        .contentType(ContentType.JSON)
+                        .body(person)
+                        .post(baseUri + "/" + basePath)
+                        .then()
+                        .statusCode(200)
+                        .log().all();
 
-            // Send the POST request and validate the response
-            given()
-                    .contentType("application/json")
-                    .body(jsonPayload)
-                    .when()
-                    .post(baseUri + "/" + basePath)
-                    .then()
-                    .statusCode(200);
-        }
+                System.out.println(heightInCm);
+                System.out.println(weightInKg);
+            }
     }
 
     @Test
@@ -129,26 +114,20 @@ public class POST {
             String country = generateRandomCountry();
             boolean married = generateRandomMarriedStatus();
 
-            String jsonPayload = "{\"personId\": \"" + personId + "\", " +
-                    "\"firstName\": \"" + firstName + "\", " +
-                    "\"lastName\": \"" + lastName + "\", " +
-                    "\"age\": " + age + ", " +
-                    "\"height\": " + heightInCm + ", " +
-                    "\"weight\": " + weightInKg + ", " +
-                    "\"country\": \"" + country + "\", " +
-                    "\"married\": " + married + " }";
+            Person person = new Person(Integer.toString(i), firstName, lastName, age, heightInCm, weightInKg,
+                    country, married);
 
             // Start the timer
             long startTime = System.currentTimeMillis();
 
             // Send the POST request and validate the response
             given()
-                    .contentType("application/json")
-                    .body(jsonPayload)
-                    .when()
+                    .contentType(ContentType.JSON)
+                    .body(person)
                     .post(baseUri + "/" + basePath)
                     .then()
-                    .statusCode(200);
+                    .statusCode(200)
+                    .log().all();
 
             // End the timer
             long endTime = System.currentTimeMillis();

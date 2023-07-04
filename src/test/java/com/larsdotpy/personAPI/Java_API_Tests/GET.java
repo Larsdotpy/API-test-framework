@@ -1,7 +1,5 @@
 package com.larsdotpy.personAPI.Java_API_Tests;
 
-
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -9,10 +7,6 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
-
-import java.io.File;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
