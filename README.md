@@ -129,9 +129,9 @@ Unit testcases: **12**
 
 Postman testcases: **11**
 
-Java Rest assured testcases: **0**
+Java Rest assured testcases: **8**
 
-Total testcas: **23**
+Total testcas: **31**
 
 ### Postman
 The Postman tool can be used for both manual and automated tests for the API framework. It can be used to check if data is created, read, updated or deleted in a valid way and if it does not result in any errors. Below I presented a link to my Postman project which contains automated tests for this API framework. This is additional to the unit testing in Java and the seperate API testing framework in Java.
@@ -157,4 +157,8 @@ To open a Postman project that is saved in a JSON file, you can follow these ste
 8. After the import process is complete, you will see the imported collection listed in the left sidebar of the Postman application. Click on the collection to expand it and view the saved requests, folders, and other elements within the project.
 
 ### Java automation
-To further enrich the API testing capabilities, I included additional tests written in Java using the RestAssured library. These tests can be run from the same project and did not require an additional external project. Before running the tests, the API must be up and running according to the previously mentioned method. When the API is successfully running, then the tests can be executed without any errors. 
+To further enrich the API testing capabilities, I included additional tests written in Java using the RestAssured library. These tests can be run from the same project and do not require an additional external project. Before running the tests, the API must be up and running according to the previously mentioned method. When the API is successfully running, then the tests can be executed without any errors. 
+
+The tests can be executed in two different ways. Individually or via a test suite. If you wish to run the entire test suite, you can do so by going to the resources folder of test. There you will find a file called _testSuite.xml_. Right click on this file and select **run** to start the entire test suite. Below is an example of how this output would look like:
+
+![Scherm­afbeelding 2023-07-04 om 20 57 38](https://github.com/Larsdotpy/API-test-framework/assets/103534528/26c8f1a0-0697-4ea5-bd5b-15a0f6fb2b3b)
