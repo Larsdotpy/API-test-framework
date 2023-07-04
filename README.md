@@ -115,7 +115,20 @@ By encapsulating the database operations within the database/repository layer, t
 *MySQL*: `https://dev.mysql.com/downloads/mysql/` 
 *MySQLWorkbench*: `https://dev.mysql.com/downloads/workbench/`
 
-To use the API database you need to setup the database manually via MySQLWorkbench and a MySQL connection that talks with the workbench. Without this connection, the API cannot create, read, update or delete any data in and from the database. Check the *application.yaml* file to see what details you should use for the setup. These details can be changed to your liking. 
+To use the API database you need to setup the database manually via MySQLWorkbench and a MySQL connection that talks with the workbench. Without this connection, the API cannot create, read, update or delete any data in and from the database. Check the *application.yaml* file to see what details you should use for the setup. These details can be changed to your liking. Note that values like the url, username and password **MUST** be adapted to your own environment. Do not just copy paste and use the values from this repository, otherwise you will encounter an error.
+
+```
+server:
+  port: ***YOUR OWN NETWORK PORT***
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/***YOUR DATABASE NAME***?useSSL=false
+    username: ***YOUR DATABASE USERNAME***
+    password: ***YOUR DATABASE PASSWORD***
+```
+
+#JPA Settings
+  jpa.hibernate.ddl_auto: create
 
 ## API Documentation
 create, read, update and delete methods hier uitleggen (eventueel swagger link)
